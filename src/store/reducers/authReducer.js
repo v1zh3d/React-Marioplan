@@ -41,7 +41,10 @@ const authReducer = (state = initState, action) => {
         authError: action.err.message,
       };
     default:
-      return state;
+      return {
+        ...state,
+        authError: null,
+      };
   }
 };
 
